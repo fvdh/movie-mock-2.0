@@ -1,0 +1,129 @@
+$font-color: #303436
+$border-color: #8D989D
+$link-color: #F9B44A
+
+.page-wrapper
+    width: 95%
+    max-width: 800px
+    margin: 0 auto
+    padding: 40px 0
+
+.page-header
+    display: grid
+    grid-template-columns: 1fr 2fr
+    align-items: center
+    padding: 0 0 40px 0
+
+    .movie-search
+        width: 100%
+        max-width: 300px
+        display: block
+        padding: 7px 16px
+        border-radius: 3px
+        border: none
+        background: #F7F8F9
+        border: solid 1px #C2CAD0
+        transition: background .2s linear
+        font-size: 14px
+
+        &:focus
+            outline: none
+            background: #fff
+    
+    .movie-decades
+        justify-self: end
+        button
+            height: 35px
+            background: #F7F8F9
+            border: solid 1px #C2CAD0
+            color: #61696E
+            font-size: 14px
+            padding: 0 20px
+            margin-left: -2px
+            cursor: pointer
+            transition: background .2s linear
+
+            &.active
+                background: #1A72B0
+                color: #fff
+                
+            &:first-child
+                border-radius: 3px 0 0 3px
+
+            &:last-child
+                border-radius: 0 3px 3px 0
+
+
+.movie-list-container
+    list-style: none
+    margin: 0
+    padding: 0
+
+    .movie-list-item
+        border: solid 2px #303436
+        border-radius: 8px
+        background: #E8EBEE
+        padding: 16px
+        margin: 16px 0
+
+.movie-item
+    display: grid
+    grid-template-columns: 140px auto
+    grid-gap: 25px
+
+    .movie-poster
+        img
+            border-radius: 8px
+            max-width: 100%
+
+    .movie-content
+        display: grid
+        
+        .movie-title
+            margin: 0 0 8px 0
+            padding-bottom: 12px
+            font-weight: 700
+            font-size: 24px
+            border-bottom: solid 1px $border-color
+            align-self: start
+            color: $font-color
+
+        .movie-info
+            align-self: start
+            font-size: 14px
+            color: $font-color
+            display: flex
+            align-items: center
+
+            .movie-rated
+                border: solid 1px $border-color
+                border-radius: 4px
+                font-family: courier
+                padding: 3px 10px
+                color: $border-color
+
+            .movie-runtime
+                margin-left: 16px
+
+            .movie-released
+                    margin-left: auto
+        
+        .movie-plot p
+            font-size: 16px
+            margin: 0
+            color: $font-color  
+
+        .movie-link
+            align-self: end
+            justify-self: end
+            display: block
+            padding: 10px 45px
+            background: $link-color
+            text-decoration: none
+            color: #fff
+            font-weight: 700
+            border-radius: 4px
+            transition: background .2s linear
+            
+            &:hover
+                background: darken($link-color, 8%)

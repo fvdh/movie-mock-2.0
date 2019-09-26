@@ -1,0 +1,41 @@
+<div class="page-wrapper">
+
+  <header class="page-header">
+    <input #newMovie (keyup.enter)="refreshAll(newMovie.value)" placeholder="Search movie" class="movie-search">
+
+    <div class="movie-decades">
+      <button *ngFor="let year of (years | async); let i = index" (click)="filterDecade(i, year, newMovie.value)" [ngClass]="{'active': selectedIndex == i}">{{year}}'s</button>
+    </div>
+
+  </header>
+
+  <section class="page-content">
+    <ul class="movie-list-container">
+      <li *ngFor="let movie of movies | async" class="movie-list-item">
+
+
+        <article class="movie-item">
+          <div class="movie-poster">
+            <img src={{movie.Poster}} />
+          </div>
+          <div class="movie-content">
+            <h1 class="movie-title">
+              {{movie.Title}}
+            </h1>
+            <div class="movie-info">
+              <span class="movie-rated">{{movie.Rated}}</span>
+              <span class="movie-runtime">{{movie.Runtime}}</span>
+              <span class="movie-released">{{movie.Released}}</span>
+            </div>
+            <div class="movie-plot">
+              <p>{{movie.Plot}}</p>
+            </div>
+            <a href="https://www.imdb.com/title/{{movie.imdbID}}" target="_blank" class="movie-link">View on IMDB</a>
+          </div>
+        </article>
+
+
+      </li>
+    </ul>
+  </section>
+</div>
